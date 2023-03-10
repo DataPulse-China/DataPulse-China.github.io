@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>辉常努腻</title>
   <style>
       .me{
           width: 80%;
@@ -16,7 +16,7 @@
           flex-wrap: wrap;
       }
       .info{
-          width: 40%;
+          width: 60%;
           min-width: 200px;
       }
       .me p{
@@ -33,7 +33,7 @@
 
       h1{color:transparent;-webkit-text-stroke:1px #666;}
       .share{
-          width: 60%;
+          width: 40%;
           min-width: 250px;
           display: flex;
           justify-content: space-around;
@@ -41,7 +41,17 @@
       .share svg{
           width: 50px;
           height: 50px;
+          animation: play 1s  alternate infinite;
       }
+
+      @keyframes play {
+            from{
+                transform: scale(1);
+            }to{
+                transform: scale(1.2);
+            }
+      }
+
   </style>
 </head>
 <body>
