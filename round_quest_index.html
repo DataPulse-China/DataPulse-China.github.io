@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>数仓开发实战模拟</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #a0c390;
+      color: #f8f8f8;
+    }
+  
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+  
+    th, td {
+      padding: 10px;
+      border: 1px solid #f8f8f8;
+    }
+  
+    .custom-button {
+      padding: 10px 20px;
+      background-color: #f8f8f8;
+      border: none;
+      color: pink;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    .custom-button:hover {
+      background-color: #f2f2f2;
+    }
+  
+    .custom-button:focus {
+      outline: none;
+    }
+  
+    .custom-button:active {
+      background-color: #ccc;
+    }
+  
+    #result-container {
+      margin: 0 auto;
+      text-align: left;
+	  font-size:30px;
+      max-width: 1300px;
+    }
+  
+    #result {
+      font-size: 50px;
+	  color:black;
+      font-weight: bold;
+    }
+	h1{
+	  font-size: 80px;
+	  color:black;
+      font-weight: bold;
+	}
+  </style>
+  
+  
+</head>
+<body>
+  <h1>数仓开发实战模拟</h1>
+
+  <!-- 文件输入框 -->
+  <input type="file" id="csvFile" accept=".csv">
+  <!-- 读取文件按钮 -->
+  <button class="custom-button" onclick="toggleReadCSV()">读取文件</button>
+
+  <!-- CSV表格 -->
+  <table id="csvTable"></table>
+
+  <!-- 随机抽取按钮 -->
+  <button class="custom-button" onclick="randomExtraction()">随机抽取</button>
+
+  <!-- 结果显示区域 -->
+<!-- 结果显示区域 -->
+  <div id="result-container" style="display: none;">
+    <p id="result" style="font-weight: bold;"></p>
+  </div>
+
+
+  <script>
+    // 存储读取的CSV数据
+    let csvData = [];
+    // 标记是否已读取文件
+    let fileRead = false;
+
+    // 切换读取文件操作
+    function toggleReadCSV() {
+      if (fileRead) {
+        hideTable();
+        hideResult();
+        fileRead = false;
+      } else {
+        let fileInput = document.getElementById('csvFile');
+        let file = fileInput.files[0];
+        let reader = new FileReader();
+
+        // 文件读取完成后的回调函数
+        reader.onload = function(e) {
+          let contents = e.target.result;
+          csvData = parseCSVContents(contents);
+          displayCSVTable(csvData);
+          hideResult();
+          fileRead = true;
+        };
+
+        reader.readAsText(file); // 读取文件内容
+      }
+    }
+
+    // 解析CSV文件内容
+    function parseCSVContents(contents) {
+      let lines = contents.split('\n'); // 按行拆分文件内容
+      let data = [];
+
+      for (let i = 0; i < lines.length; i++) {
+        let line = lines[i].trim(); // 移除行两侧的空白字符
+        let fields = line.split(','); // 按逗号分隔字段
+
+        data.push(fields); // 将字段添加到数据中
+      }
+
+      return data;
+    }
+
+    // 显示CSV表格
+    function displayCSVTable(data) {
+      let table = document.getElementById('csvTable');
+      table.innerHTML = '';
+
+      for (let i = 0; i < data.length; i++) {
+        let row = document.createElement('tr');
+
+        for (let j = 0; j < data[i].length; j++) {
+          let cell = document.createElement(i === 0 ? 'th' : 'td');
+          cell.textContent = data[i][j];
+          row.appendChild(cell);
+        }
+
+        table.appendChild(row);
+      }
+    }
+
+    // 随机抽取CSV数据
+    function randomExtraction() {
+      if (csvData.length > 0) {
+        let randomIndex = Math.floor(Math.random() * csvData.length);
+        let randomRow = csvData[randomIndex];
+
+        let resultContainer = document.getElementById('result-container');
+        let result = document.getElementById('result');
+        result.textContent = randomRow.join(', '); // 使用逗号连接字段
+        resultContainer.style.display = 'block'; // 显示结果
+      }
+    }
+
+    // 隐藏CSV表格
+    function hideTable() {
+      let table = document.getElementById('csvTable');
+      table.innerHTML = '';
+    }
+
+    // 隐藏结果显示区域
+    function hideResult() {
+      let resultContainer = document.getElementById('result-container');
+      resultContainer.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
