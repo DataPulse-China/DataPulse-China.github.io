@@ -151,13 +151,17 @@
       if (csvData.length > 0) {
         let randomIndex = Math.floor(Math.random() * csvData.length);
         let randomRow = csvData[randomIndex];
-
         let resultContainer = document.getElementById('result-container');
         let result = document.getElementById('result');
         result.textContent = randomRow.join(', '); // 使用逗号连接字段
         resultContainer.style.display = 'block'; // 显示结果
+        csvData.splice(randomIndex, 1);//删除已经抽取的结果
+      }else{
+        alert('题库已空，请重新安排题目 或者 重新读取！')
       }
     }
+
+    
 
     // 隐藏CSV表格
     function hideTable() {
