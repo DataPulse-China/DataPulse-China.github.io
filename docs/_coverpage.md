@@ -33,9 +33,6 @@
           font-size: 35px;
           font-weight: bold;
       }
-
-      /* span{background:linear-gradient(to right, red, blue);-webkit-background-clip:text;color:transparent;} */
-
       h1{color:transparent;-webkit-text-stroke:1px #666;}
       .share{
           width: 40%;
