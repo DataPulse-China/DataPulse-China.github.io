@@ -90,7 +90,7 @@
 <div class="cover-main">
 <h1 id="toBeTopJavaer">
 <div id="img-bok" style="width:70%;margin:auto">
-    <img src="./img/DataPulse-logo-2.jpg" style="width:23%;min-width:250px"/>
+    <img src="./img/DataPulse-Logo-3.png" style="width:23%;min-width:250px"/>
     <img src="./img/DataPulse-QR-2.png" style="width:44%;min-width:250px"/>
     <img src="./img/UP-WX.png"  style="width:15%;min-width:200px"/>
 </div>
