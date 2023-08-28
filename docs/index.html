@@ -2,70 +2,252 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>DataPulse社区官网</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
+  <style>
+    .app-nav{
+      position: fixed;
+      margin: 0;
+      /*padding: 10px 50px 10px 0;*/
+      padding: 10px 0 10px 0;/*上、右、下、左*/
+      width: calc(100% - 325px);
+      /* background-color: #fff; */
+      height: 55px;
+    }
+    /*侧边栏*/
+    .sidebar {
+      padding-top: 6px;
+    }
+
+    aside.sidebar ul li {
+      margin: 0;
+      position: relative;
+    }
+
+    aside.sidebar ul li ul {
+      margin: 6px 0;
+    }
+
+    aside.sidebar ul li p {
+      padding-left: 22px;
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    aside.sidebar ul li a {
+      line-height: 35px;
+      font-size: 14px;
+      padding: 3px 0 3px 22px;
+    }
+
+    aside.sidebar ul li.active > a {
+      font-size: 16px !important;
+    }
+
+    aside.sidebar ul li.active > a:before {
+      content: '' !important;
+      position: absolute !important;
+      margin: 0 !important;
+      width: 10px !important;
+      height: 10px !important;
+      top: 15px !important;
+      left: 0px !important;
+      border-radius: 50% !important;
+      background-color: #fed24a !important;
+      box-shadow: 0 0 0 3px rgba(254, 210, 74, 0.4) !important;
+    }
+
+    /*以上调侧边栏*/
+
+    /* 固定微信 */
+
+    @media (max-width:600px) {
+      pre {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        box-shadow: 0px 0px 20px 0px #f7f7f7 !important;
+      }
+
+      /*代码块复制按钮默认隐藏*/
+      .docsify-copy-code-button {
+        display: none;
+      }
+
+      .advertisement{
+        display: none;
+      }
+
+    }
+    .advertisement {
+      position: fixed;
+      right: 0px;
+      top: 100px;
+      width: 180px;
+      box-shadow: -1px 0 2px 0px #c5ebda;
+      padding: 10px;
+      z-index: 999;
+      background-color: #fff;
+      text-align: center;
+      transition: 1s;
+    }
+
+    .advertisement p, h4 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .advertisement .Tencent_code h4 {
+      font-size: 20px;
+      color: #25a46a;
+      margin-bottom: 10px;
+    }
+    .advertisement .Tencent_code{
+      margin: 10px 0px;
+    }
+    .advertisement .shutdown{
+      background-color: aqua;
+      position: relative;
+      top: 265px;
+      left:-30px;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+    }
+    /* 固定微信 */
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> -->
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
 <body>
- <script>
-  window.$docsify = {
-    name: 'DataPulse  -  数据脉冲社区',
-    repo: 'https://github.com/DataPulse-China',
-    // 开启侧边栏定制,加载_sidebar.md
-    loadSidebar: true,
-    subMaxLevel: 2,
-    // 首页md
-    coverpage: true
-  }
-</script>
-<!-- <a href="" style="position: fixed;z-index: 999;">asdasd</a> -->
- <!-- <span  style="position: fixed;z-index: 999;">
-  <span id="busuanzi_container_site_pv" >本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-</span> -->
-  <div id="app">
-
-
-  </div>
-
-
-  <!-- mouse click 爱心 -->
-  <script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script>
-
-  <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <!-- 自动计数 https://busuanzi.ibruce.info/ -->
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script>
+    window.$docsify = {
+      name: 'DataPulse <br/>  数据脉冲官方社区',
+      repo: 'https://github.com/DataPulse-China',
+      // 开启侧边栏定制,加载_sidebar.md
+      // loadSidebar: true,
+      // 开启导航栏,加载_navbar.md
+      loadNavbar: true, 
+      mergeNavbar: true,//Navbar将在小屏幕上与侧边栏合并
+      maxLevel: 6,//最大的内容表级别
+      subMaxLevel: 6,//在自定义边栏中添加目录（TOC)
+      // 首页md
+      coverpage: true,
+      search: {
+        paths: 'auto',
+        placeholder: '🔍 搜索',
+        noData: '😒 找不到结果',
+        // Headline depth, 1 - 6
+        depth: 6,
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+      },//添加搜索框
+      // // 谷歌分析 SEO
+      // ga: 'UA-164658031-2',
+      // footer: {
+      //   copy: '<div class = "over" >完结</div><br/><span>我能想到最浪漫的事，就是我喝咖啡你付钱~😆😏 ❤️ 打赏地址：<a href="https://wugenqiang.js.org/sponsor/" target="_blank">https://wugenqiang.js.org/sponsor/</a></span><iframe src="https://wugenqiang.js.org/sponsor/" style="overflow-x:hidden;overflow-y:hidden; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe><br/><span id="sitetime"></span><br/><span>Copyright &copy; 2019 - 至今</span>',
+      //   auth: ' <a href="https://wugenqiang.github.io/" target="_blank">🏷️ EnjoyToShare </a> <span> 一个人可以走的很快，但一群人才能走的更远！</span>',
+      //   pre: '<hr/>',
+      //   style: 'text-align: left;',
+      // },//添加页脚
+    }
+
+    // 开启定时器，为了定时刷新 .me div的 渐变颜色
     setTimeout("color()", 10 )
+    setTimeout("color()", 100 )
+    setTimeout("color()", 150 )
+    setTimeout("color()", 200 )
+    setTimeout("color()", 250 )
+    setTimeout("color()", 300 )
+    setTimeout("color()", 400 )
     setTimeout("color()", 500 )
     setInterval("color()", 1000 )
     function color(){
-      console.log(document.querySelector(".cover"))
+      //获取docsify的自带背景颜色
       let color = document.querySelector(".cover").style.background
         .replace("linear-gradient(to left bottom, ","").replace("100%)","")
-      console.log(typeof(color));
-      console.log(color);
+      //获取渐变的第一个颜色
       let left = color.split('0%,')[0]
+      //获取渐变的第二个颜色
       let right = color.split('0%,')[1]
-      document.querySelector(".me").style.background = 'linear-gradient(to left bottom, '+ right +' 0%,'+ left +'100%)'
+      //讲两个渐变倒置 赋值到我的.me div上
+      // document.querySelector(".me").style.background = 'linear-gradient(to left bottom, '+ right +' 0%,'+ left +'100%)'
 
+      //给.info的字体颜色赋值 ， 使用 docsify自带的颜色 的 绝对色（0-250） 将每个数值上调125个数值，超出250 归0计算
       document.querySelector(".info").style.color=textColor(left)
       console.log( 'linear-gradient(to left bottom, '+ right +' 0%, ,'+ left +'100%)');
     }
 
     function textColor(string){
+      //获取RGB的三个数值
       let color = string.replace("rgb(","").replace(")","").split(',')
+      //绝对色（0-250） 将每个数值上调125个数值，超出250 归0计算
       let colorStr = "rgb(" + ((parseInt(color[0])+125) > 250 ? parseInt(color[0])+125-250 : parseInt(color[0])+125) + ","+ ((parseInt(color[1])+125) > 250 ? parseInt(color[1])+125-250 : parseInt(color[1])+125) + "," + ((parseInt(color[2])+125) > 250 ? parseInt(color[2])+125-250 : parseInt(color[2])+125) + ")"
-      console.log(colorStr);
       return colorStr
     }
-
-
-    // background: linear-gradient(to left bottom, hsl(55, 100%, 85%) 0%,hsl(222, 100%, 85%) 100%)
+    var shutdownFlag = 0
+    function shutdown(){
+      console.log(shutdownFlag);
+      if(shutdownFlag === 0){
+        console.log(1);
+        shutdownFlag = 1
+        document.querySelector(".advertisement").style.right='-170px'
+        document.querySelector(".shutdown").textContent='👈'
+      }else{
+        console.log(2);
+        shutdownFlag = 0
+        document.querySelector(".advertisement").style.right='0px'
+        document.querySelector(".shutdown").textContent='👉'
+      }
+      
+    }
   </script>
+
+  <!-- 导航栏 -->
+  <!-- <nav>
+    <a href="#/">EN</a>
+    <a href="#/zh-cn/">中文</a>
+  </nav> -->
+
+  <!-- VUE渲染区域 -->
+  <div id="app">🏃‍🏃‍🏃‍💨 DataPulse ~ 加载中...</div>
+
+  <div class="aside_container">
+    <div class="advertisement">
+      <div class="shutdown" onclick="shutdown()">👉</div>
+      <div class="Tencent_code">
+        <h4>关注官方公众号</h4>
+        <p style="font-size: 12px;">万千小伙伴陪你一起学</p>
+        <img src="./img/DataPulse-QR-3.jpg" alt="EnjoyToShare" />
+      </div>
+      <div class="Tencent_code">
+        <h4>添加官方微信</h4>
+        <p style="font-size: 12px;">万千小伙伴陪你一起学</p>
+        <img src="./img/UP-WX.png" alt="EnjoyToShare" />
+      </div>
+      <div class="Tencent_code">
+        <h4 style="color: red;">广告位招租</h4>
+        <p style="font-size: 12px;">广告位招租</p>
+        <img src="./img/UP-WX.png" alt="EnjoyToShare" />
+      </div>
+    </div>
+</div>
+
+  <!--搜索插件-->
+  <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
+  <!-- 添加页脚 -->
+  <script src="https://notebook.js.org/plugin/docsify-footer-enh.min.js"></script>
+  <!-- mouse click 爱心 -->
+  <script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- 自动计数 https://busuanzi.ibruce.info/ -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>
 
