@@ -39,8 +39,7 @@
   <script>
     setTimeout("color()", 10 )
     setTimeout("color()", 500 )
-    setTimeout("color()", 1000 )
-    setTimeout("color()", 2000 )
+    setInterval("color()", 1000 )
     function color(){
       console.log(document.querySelector(".cover"))
       let color = document.querySelector(".cover").style.background
