@@ -37,7 +37,10 @@
   <!-- 自动计数 https://busuanzi.ibruce.info/ -->
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script>
-    setInterval("color()", 10 )
+    setTimeout("color()", 10 )
+    setTimeout("color()", 500 )
+    setTimeout("color()", 1000 )
+    setTimeout("color()", 2000 )
     function color(){
       console.log(document.querySelector(".cover"))
       let color = document.querySelector(".cover").style.background
