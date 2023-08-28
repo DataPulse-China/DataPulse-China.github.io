@@ -1,9 +1,5 @@
 <!-- <div class="cover-main"><img width="180px" src="icon/icon.JPG"> -->
 
-
-<head>
-    <meta charset="UTF-8">
-    <title>辉常努腻</title>
   <style>
       .me{
           width: 80%;
@@ -37,10 +33,6 @@
           font-size: 35px;
           font-weight: bold;
       }
-
-      
-
-
 
       span{background:linear-gradient(to right, red, blue);-webkit-background-clip:text;color:transparent;}
 
