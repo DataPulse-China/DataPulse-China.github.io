@@ -34,7 +34,7 @@
           font-weight: bold;
       }
 
-      span{background:linear-gradient(to right, red, blue);-webkit-background-clip:text;color:transparent;}
+      /* span{background:linear-gradient(to right, red, blue);-webkit-background-clip:text;color:transparent;} */
 
       h1{color:transparent;-webkit-text-stroke:1px #666;}
       .share{
