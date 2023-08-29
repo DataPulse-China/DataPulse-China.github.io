@@ -91,7 +91,9 @@
       z-index: 999;
       background-color: #fff;
       text-align: center;
-      transition: 1s;
+      transition: .8s;
+      transition-timing-function: cubic-bezier(0,.37,.06,.91);
+      /* transition-timing-function: ease-in-out; */
     }
 
     .advertisement p, h4 {
@@ -124,6 +126,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> -->
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+
+  <link rel="stylesheet" href="css/animate.css">
+  <script src="js/wow.min.js"></script>
+  <script>
+      new WOW().init();
+  </script>
 </head>
 <body>
   <script>
@@ -175,9 +183,10 @@
       let left = color.split('0%,')[0]
       //获取渐变的第二个颜色
       let right = color.split('0%,')[1]
-      //讲两个渐变倒置 赋值到我的.me div上
+      //将两个渐变倒置 赋值到我的.advertisement 宣传位 div上
+      document.querySelector(".advertisement").style.background = 'linear-gradient(to left bottom, '+ right +' 0%,'+ left +'100%)'
+      //将两个渐变倒置 赋值到我的.me div上
       document.querySelector(".me").style.background = 'linear-gradient(to left bottom, '+ right +' 0%,'+ left +'100%)'
-
       //给.info的字体颜色赋值 ， 使用 docsify自带的颜色 的 绝对色（0-250） 将每个数值上调125个数值，超出250 归0计算
       document.querySelector(".info").style.color=textColor(left)
       console.log( 'linear-gradient(to left bottom, '+ right +' 0%, ,'+ left +'100%)');
@@ -196,12 +205,18 @@
       if(shutdownFlag === 0){
         console.log(1);
         shutdownFlag = 1
-        document.querySelector(".advertisement").style.right='-170px'
+        document.querySelector(".advertisement").style.right='-140px'
+        document.querySelector(".advertisement").style.scale=0.5
+        document.querySelector(".shutdown").style.scale=2
+        document.querySelector(".shutdown").style.left="-100px"
         document.querySelector(".shutdown").textContent='👈'
       }else{
         console.log(2);
         shutdownFlag = 0
         document.querySelector(".advertisement").style.right='0px'
+        document.querySelector(".advertisement").style.scale=1
+        document.querySelector(".shutdown").style.scale=1
+        document.querySelector(".shutdown").style.left="-30px"
         document.querySelector(".shutdown").textContent='👉'
       }
       
@@ -218,7 +233,7 @@
   <div id="app">🏃‍🏃‍🏃‍💨 DataPulse ~ 加载中...</div>
 
   <div class="aside_container">
-    <div class="advertisement">
+    <div class="advertisement bounceInDown">
       <div class="shutdown" onclick="shutdown()">👉</div>
       <div class="Tencent_code">
         <h4>关注官方公众号</h4>

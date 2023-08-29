@@ -3,6 +3,7 @@
   <style>
       .me{
           width: 70%;
+          padding: 0 3% ;
           /*height: 150px;*/
           background: linear-gradient(to bottom right, red, violet);
           border-radius: 20px;
@@ -21,7 +22,7 @@
           /* min-width: 300px; */
       }
       .me p{
-          padding-left: 10%;
+          /* padding-left: 10%; */
           /* color: black; */
           /* color: white; */
           /* display:inline-block; */
@@ -68,7 +69,7 @@
   </style>
 </head>
 <div class="main">
-    <div class="me">
+    <div class="me wow rollIn">
         <div class="info">
             <p>你好，很高兴认识你😀</p>
             <p>我是&nbsp;&nbsp;&nbsp;<b>DataPulse社区官网</b></p>
@@ -87,15 +88,15 @@
 
 
 
-<div class="cover-main">
-<h1 id="toBeTopJavaer">
+<div  class="cover-main wow bounceInUp">
+
 <div id="img-bok" style="width:70%;margin:auto">
     <img src="./img/DataPulse-Logo-3.png" style="width:23%;min-width:250px"/>
 <!-- 	使用页面上的公众号/微信图片，主页上的暂时关闭，保持页面美观 -->
 <!--     <img src="./img/DataPulse-QR-2.png" style="width:44%;min-width:250px"/> -->
 <!--     <img src="./img/UP-WX.png"  style="width:15%;min-width:200px"/> -->
 </div>
-<a><span>DataPulse  -  数据脉冲社区</span></a></h1>
+<h1 id="toBeTopJavaer"><a><span>DataPulse  -  数据脉冲社区</span></a></h1>
 
 ![](https://img.shields.io/badge/version-v1.0.0-green.svg) ![](https://img.shields.io/badge/author-辉常努腻-yellow.svg) ![](https://img.shields.io/badge/license-GPL-blue.svg)
 
@@ -105,7 +106,8 @@
 <span id="busuanzi_container_site_uv" style="display: inline;"> 
     | 🧑总访客数: <span id="busuanzi_value_site_uv"></span>
 </span>
-<p><a href="#/README">开始阅读</a></p></div><div class="mask"></div></section>
+    <p><a href="#/README">开始阅读</a></p>
+</div>
 
 <script>
         console.log("asd")
