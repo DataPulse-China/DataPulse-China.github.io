@@ -176,7 +176,7 @@
       //获取渐变的第二个颜色
       let right = color.split('0%,')[1]
       //讲两个渐变倒置 赋值到我的.me div上
-      // document.querySelector(".me").style.background = 'linear-gradient(to left bottom, '+ right +' 0%,'+ left +'100%)'
+      document.querySelector(".me").style.background = 'linear-gradient(to left bottom, '+ right +' 0%,'+ left +'100%)'
 
       //给.info的字体颜色赋值 ， 使用 docsify自带的颜色 的 绝对色（0-250） 将每个数值上调125个数值，超出250 归0计算
       document.querySelector(".info").style.color=textColor(left)
