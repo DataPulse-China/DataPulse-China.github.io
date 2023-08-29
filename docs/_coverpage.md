@@ -91,8 +91,9 @@
 <h1 id="toBeTopJavaer">
 <div id="img-bok" style="width:70%;margin:auto">
     <img src="./img/DataPulse-Logo-3.png" style="width:23%;min-width:250px"/>
-    <img src="./img/DataPulse-QR-2.png" style="width:44%;min-width:250px"/>
-    <img src="./img/UP-WX.png"  style="width:15%;min-width:200px"/>
+<!-- 	使用页面上的公众号/微信图片，主页上的暂时关闭，保持页面美观 -->
+<!--     <img src="./img/DataPulse-QR-2.png" style="width:44%;min-width:250px"/> -->
+<!--     <img src="./img/UP-WX.png"  style="width:15%;min-width:200px"/> -->
 </div>
 <a><span>DataPulse  -  数据脉冲社区</span></a></h1>
 
