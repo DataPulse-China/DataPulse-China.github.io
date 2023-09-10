@@ -12,8 +12,9 @@
   - [🥼 前端学习](README?id=🥼-前端学习)
   - [🔨 工具 COOL](README?id=🔨-工具-cool)
   - [🎅 赞赏作者](README?id=🎅-赞赏作者) -->
-- [CSDN](https://blog.csdn.net/qq_43900956)
-- [<span class="iconfont icon-wodeguanzhu"></span> 关于本站](readme)
+- [国内此站-访问快](https://datapulse.gitee.io/org/)  
+- [国际此站-有机场访问快](https://datapulse-china.github.io/)  
+- [关于本站](readme)
 - [GitHub](https://github.com/DataPulse-China)
 
 
