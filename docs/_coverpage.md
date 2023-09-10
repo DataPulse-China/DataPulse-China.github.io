@@ -35,7 +35,7 @@
           font-size: 35px;
           font-weight: bold;
       }
-      h1{color:transparent;-webkit-text-stroke:1px #666;}
+      /* h1{color:transparent;-webkit-text-stroke:1px #666;} */
       .share{
           width: 40%;
           min-width: 250px;
