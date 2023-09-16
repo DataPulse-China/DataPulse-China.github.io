@@ -6,7 +6,7 @@ mvnw
 mvnw.cmd
 logs/
 target/
- 
+.idea/
 .project
 .settings
 .classpath
