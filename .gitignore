@@ -1,7 +1,7 @@
 ###需要过滤的文件夹或者文件###
 .idea　　　　
 .mvn　　　　
-.iml
+*.iml
 mvnw
 mvnw.cmd
 logs/
