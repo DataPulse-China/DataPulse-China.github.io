@@ -15,4 +15,4 @@
 
 #  面经合集
   * [字节大数据开发实习-一条鱼.md](/blog/java/interview/字节大数据开发实习-一条鱼)
-  * [广州智算大数据实习-一条鱼.md](/blog/bigdata/interview/【面经】广州智算大数据实习一条鱼.md)
+  * [广州智算大数据实习-一条鱼.md](/blog/java/interview/广州智算大数据实习一条鱼)
