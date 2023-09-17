@@ -41,7 +41,7 @@
             * docs/README.md
             * 示例：
 
-            ```markdown
+            ```
                #面经合集
                *[广州智算大数据实习-一条鱼 23.09.14](/blog/bigdata/interview/【面经】广州智算大数据实习一条鱼)
                *[字节大数据开发实习-一条鱼 23.09.4](/blog/bigdata/interview/【面经】字节大数据开发实习-一条鱼)
