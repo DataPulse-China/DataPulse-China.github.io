@@ -28,7 +28,23 @@
         * 提交修改：将你的修改推送到你的远程分支。 
         * 创建 PR：在你的github项目仓库的 GitHub 页面中创建一个 PR，描述你的修改内容和目的。
         * 等待审查：等待项目维护者对你的 PR 进行审查，并与你进行必要的讨论和更改。
-        * 合并 PR：如果你的修改通过审查并被接受，项目维护者将合并你的修改到主代码库中。      
+        * 合并 PR：如果你的修改通过审查并被接受，项目维护者将合并你的修改到主代码库中。  
+     2. 开发位置？
+        * 开发分支：new-datapulse-docsify-blog
+        * 放文档位置：
+            * 大数据目录(大数据相关可以在这里建立文件夹)：docs/blog/bigdata
+                  * 大数据面试(面试相关可以在这里放文件)：docs/blog/bigdata/interview
+            * Java目录(Java相关可以在这里建立文件夹)：docs/blog/java
+                  * Java面试(面试相关可以在这里放文件)：docs/blog/bigdata/interview
+            * 总之呢，你可以在docs/blog、里添加文件目录,放自己合适的贡献文档
+        * 目录编写位置：
+            * docs/README.md
+            * 示例：
+            ```
+             #  面经合集
+            * [广州智算大数据实习-一条鱼 23.09.14](/blog/bigdata/interview/【面经】广州智算大数据实习一条鱼)
+            * [字节大数据开发实习-一条鱼 23.09.4](/blog/bigdata/interview/【面经】字节大数据开发实习-一条鱼)
+            ```
 2. 种子计划发布的内容可以使用哪些技术？
    1. 大数据（Hadoop、Hive、Spark、Flink、Clickhouse 等等大数据场景的组件技术
    2. 数分（tableau、powerbi 等BI、用户画像体系、数据分析\运营策略、机器学习-预测模型等
