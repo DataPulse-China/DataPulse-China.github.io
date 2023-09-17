@@ -33,23 +33,26 @@
         * 开发分支：new-datapulse-docsify-blog
         * 放文档位置：
             * 大数据目录(大数据相关可以在这里建立文件夹)：docs/blog/bigdata
-                  * 大数据面试(面试相关可以在这里放文件)：docs/blog/bigdata/interview
+            * 大数据面试(面试相关可以在这里放文件)：docs/blog/bigdata/interview
             * Java目录(Java相关可以在这里建立文件夹)：docs/blog/java
-                  * Java面试(面试相关可以在这里放文件)：docs/blog/bigdata/interview
+            * Java面试(面试相关可以在这里放文件)：docs/blog/bigdata/interview
             * 总之呢，你可以在docs/blog、里添加文件目录,放自己合适的贡献文档
         * 目录编写位置：
             * docs/README.md
             * 示例：
-            ```
+
+            ```markdown
              #  面经合集
             * [广州智算大数据实习-一条鱼 23.09.14](/blog/bigdata/interview/【面经】广州智算大数据实习一条鱼)
             * [字节大数据开发实习-一条鱼 23.09.4](/blog/bigdata/interview/【面经】字节大数据开发实习-一条鱼)
             ```
+            
 2. 种子计划发布的内容可以使用哪些技术？
    1. 大数据（Hadoop、Hive、Spark、Flink、Clickhouse 等等大数据场景的组件技术
    2. 数分（tableau、powerbi 等BI、用户画像体系、数据分析\运营策略、机器学习-预测模型等
    3. 编程语言（Java、Scala、Python 等较为主流的编程技术
    4. 项目管理（pm知识、项目管理知识、项目沉淀等
 3. 有别的问题怎么问？
+   
    1. 可以直接联系右侧微信号或者公众号 
 
