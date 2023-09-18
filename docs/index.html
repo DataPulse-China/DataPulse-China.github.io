@@ -124,13 +124,10 @@
     /* 固定微信 */
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> -->
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 
   <link rel="stylesheet" href="css/animate.css">
   <script src="js/wow.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"> 
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script> 
   <script>
       new WOW().init();
   </script>
@@ -165,35 +162,52 @@
       //   pre: '<hr/>',
       //   style: 'text-align: left;',
       // },//添加页脚
-    plugins: [
+      plugins: [
       function(hook) {
+        utterances = document.querySelector(".utterances")
         var footer = [
+          // '<script src="https://utteranc.es/client.js" type="text/javascript"',
+          // 'repo="DataPulse-China/DataPulse-China.github.io"',
+          // 'issue-term="pathname"',
+          // 'label="utterances"',
+          // 'theme="github-light"',
+          // 'async></',
+          // 'script>',
           '<hr/>',
-          '<div id="gitalk-container"></div>' ,
+          '<div id="giutterances-container"></div>' ,
           '<footer>',
           '<span><a href="https://github.com/DataPulse-China">DataPulse-China</a> &copy;2023. Powered by docsify </span>',
           '</footer>'
         ].join('');
+        hook.doneEach(function() {
+          footerHtml = document.querySelector("giutterances-container")
 
+          // 将 elementToMove 从原来的父元素移除
+          // utterances.parentNode.removeChild(utterances);
+          // 将 elementToMove 添加到 targetElement 中
+          footerHtml.appendChild(utterances); 
+          // 初始化完成后调用，只调用一次，没有参数。
+        });
         hook.afterEach(function(html) {
           return html + footer;
         });
-        hook.doneEach(function() {
-          var gitalk = new Gitalk({   
-              clientID: 'fd8a67db271cd7653f71',   
-              clientSecret: 'f492666d981829c11c0ef0b151eebc1e9fee2d5d',   
-              repo: 'DataPulse-China.github.io',   
-              owner: 'DataPulse-China',   
-              // GitHub repo owner and collaborators, only these guys can initialize github issues
-              admin: ['DataPulse-China'],   
-              id: "location.pathname",      // 请确保你的 location 连接小于 50 个字符，否则，插件会生成失败   
-              distractionFreeMode: false // 专注模式 
-          })  
-          gitalk.render('gitalk-container')
-        });
+        // hook.doneEach(function() {
+        //   var gitalk = new Gitalk({   
+        //       clientID: 'fd8a67db271cd7653f71',   
+        //       clientSecret: 'f492666d981829c11c0ef0b151eebc1e9fee2d5d',   
+        //       repo: 'https://github.com/DataPulse-China/DataPulse-China.github.io',   
+        //       owner: 'DataPulse-China',   
+        //       // GitHub repo owner and collaborators, only these guys can initialize github issues
+        //       admin: ['DataPulse-China'],   
+        //       id: "info",      // 请确保你的 location 连接小于 50 个字符，否则，插件会生成失败   
+        //       distractionFreeMode: false // 专注模式 
+        //   })  
+        //   // 由于docsify/lib/plugins/gitalk.min.js文件中已经有下面代码了，所以不需要在写一次了
+        //   gitalk.render('gitalk-container') 
+        // });
 
       }
-    ]//添加gitalk
+      ]//添加gitalk,因为代理原因，暂时不用，使用 https://utteranc.es/ 作为代替方案
     }
 
     // 开启定时器，为了定时刷新 .me div的 渐变颜色
@@ -286,14 +300,24 @@
 
   <!--搜索插件-->
   <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
-  <!-- 添加页脚 -->
-  <script src="https://notebook.js.org/plugin/docsify-footer-enh.min.js"></script>
+  <!-- 添加页脚
+  <script src="https://notebook.js.org/plugin/docsify-footer-enh.min.js"></script> -->
   <!-- mouse click 爱心 -->
   <script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <!-- 自动计数 https://busuanzi.ibruce.info/ -->
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <!-- comments plugin -->
+  <script src="https://utteranc.es/client.js"
+    repo="DataPulse-China/DataPulse-China.github.io"
+    issue-term="pathname"
+    label="comment"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
 </body>
 </html>
 
