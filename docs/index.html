@@ -185,8 +185,27 @@
           '</footer>'
         ].join('');
         hook.doneEach(function() {
+          console.log("-----切换评论区");
           footerHtml = document.querySelector("#giutterances-container")
-          console.log("--- 切换评论区 ---")
+          current_page_url = window.location.href.split("/#")[1];
+          // 获取当前页面URL
+          console.log(current_page_url);
+          // 评论区 iframe URL 字符串
+          var urlString = utterances.children[0].src;
+          // 创建 URL 对象
+          var url = new URL(urlString);
+          // 获取 name 参数的值
+          // var nameValue = url.searchParams.get("url");
+          // 修改 Url 参数的值
+          url.searchParams.set("url", current_page_url);
+
+          console.log(url.searchParams.get("url"));
+          // 获取修改后的 URL 字符串
+          var modifiedUrlString = url.toString();
+          console.log(modifiedUrlString);
+          //src重新赋值
+          utterances.children[0].src=modifiedUrlString
+          
           // 将 elementToMove 从原来的父元素移除
           // utterances.parentNode.removeChild(utterances);
           // 将 elementToMove 添加到 targetElement 中
@@ -317,7 +336,7 @@
   <!-- comments plugin -->
   <script src="https://utteranc.es/client.js"
     repo="DataPulse-China/DataPulse-China.github.io"
-    issue-term="pathname"
+    issue-term="url"
     label="comment"
     theme="github-light"
     crossorigin="anonymous"
