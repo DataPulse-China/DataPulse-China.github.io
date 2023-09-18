@@ -129,6 +129,8 @@
 
   <link rel="stylesheet" href="css/animate.css">
   <script src="js/wow.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"> 
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script> 
   <script>
       new WOW().init();
   </script>
@@ -163,6 +165,35 @@
       //   pre: '<hr/>',
       //   style: 'text-align: left;',
       // },//添加页脚
+    plugins: [
+      function(hook) {
+        var footer = [
+          '<hr/>',
+          '<div id="gitalk-container" style="height:1000px"></div>' ,
+          '<footer>',
+          '<span><a href="https://github.com/DataPulse-China">DataPulse-China</a> &copy;2023. Powered by docsify </span>',
+          '</footer>'
+        ].join('');
+
+        hook.afterEach(function(html) {
+          return html + footer;
+        });
+        hook.doneEach(function() {
+          var gitalk = new Gitalk({   
+              clientID: 'fd8a67db271cd7653f71',   
+              clientSecret: 'f492666d981829c11c0ef0b151eebc1e9fee2d5d',   
+              repo: 'https://github.com/DataPulse-China/DataPulse-China.github.io',   
+              owner: 'DataPulse-China',   
+              // GitHub repo owner and collaborators, only these guys can initialize github issues
+              admin: ['DataPulse-China'],   
+              id: "location.pathname",      // 请确保你的 location 连接小于 50 个字符，否则，插件会生成失败   
+              distractionFreeMode: false // 专注模式 
+          })  
+          gitalk.render('gitalk-container')
+        });
+
+      }
+    ]//添加gitalk
     }
 
     // 开启定时器，为了定时刷新 .me div的 渐变颜色
